@@ -1,0 +1,111 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #121212;
+    margin: 0;
+    color: #ffffff;
+    user-select: auto; /* Ensure text can be selected */
+}
+
+#chat-container {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 600px;
+    border: 1px solid #333;
+    background-color: #1e1e1e;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    overflow-y: scroll;
+    overflow-x: scroll;
+}
+
+#chat-box {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto; /* Ensure chat box can scroll */
+    border-bottom: 1px solid #333;
+}
+
+#messages {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto; /* Ensure messages container can scroll */
+    max-height: calc(100% - 50px); /* Adjust max-height as needed */
+    padding: 10px; /* Add padding for spacing */
+}
+
+.message {
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+    max-width: 80%;
+    font-size: 16px;
+    word-wrap: break-word; /* Ensure words wrap to the next line */
+    white-space: pre-wrap; /* Maintain whitespace and wrap text */
+}
+
+.message.user {
+    align-self: flex-end;
+    background-color: #007aff; /* iPhone message blue */
+    color: #ffffff;
+}
+
+.message.bot {
+    align-self: flex-start;
+    background-color: #444; /* Grey background for bot messages */
+    color: #ffffff;
+}
+
+#chat-input {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #333;
+}
+
+/* #message-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    margin-right: 10px;
+    font-size: 16px;
+    background-color: #2b2b2b;
+    color: #ffffff;
+} */
+
+#message-input {
+    flex: 1;
+    resize: none; /* Prevent manual resizing */
+    padding: 10px;
+    font-size: 16px;
+    line-height: 1.5;
+    /* border: 1px solid #ccc; */
+    overflow-y: scroll;
+    background-color: #2b2b2b;
+    color: #ffffff;
+    border-radius: 5px;
+    min-height: 40px; /* Minimum height of the textarea */
+    max-height: 200px; /* Maximum height of the textarea */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+#message-input::placeholder {
+    color: #888;
+}
+
+#send-button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#send-button:hover {
+    background-color: #0056b3;
+}
